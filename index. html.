@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Para mi amada Mariana</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="portada">
+        <h1 class="titulo">Para Mariana</h1>
+        <p class="subtitulo">Haz clic para descubrir un mensaje</p>
+    </div>
+
+    <div id="corazon-contenedor">
+        <div class="corazon-animado"></div>
+        <div class="mensaje-oculto">
+            <p>El universo conspiró a nuestro favor y por eso te amo con todo mi ser. Eres mi destino.</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
+Crear index.html para la nueva dedicatoria
