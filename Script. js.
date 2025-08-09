@@ -1,0 +1,55 @@
+document.addEventListener('DOMContentLoaded', () => {
+    const portada = document.querySelector('.portada');
+    const corazonContenedor = document.getElementById('corazon-contenedor');
+
+    portada.addEventListener('click', () => {
+        portada.style.opacity = '0';
+        portada.style.transition = 'opacity 1s';
+        
+        setTimeout(() => {
+            portada.style.display = 'none';
+            corazonContenedor.style.opacity = '1';
+            corazonContenedor.classList.add('mostrar-mensaje');
+        }, 1000);
+    });
+
+    function crearParticula() {
+        const particula = document.createElement('div');
+        particula.classList.add('particula');
+        document.body.appendChild(particula);
+
+        const tamaño = Math.random() * 5 + 2;
+        particula.style.width = `${tamaño}px`;
+        particula.style.height = `${tamaño}px`;
+        particula.style.background = `hsl(${Math.random() * 360}, 100%, 50%)`;
+
+        const x = Math.random() * window.innerWidth;
+        const y = Math.random() * window.innerHeight;
+        particula.style.left = `${x}px`;
+        particula.style.top = `${y}px`;
+
+        const duracion = Math.random() * 2 + 1;
+        particula.style.animation = `parpadeo ${duracion}s infinite`;
+    }
+
+    const cantidadParticulas = 50;
+    for (let i = 0; i < cantidadParticulas; i++) {
+        crearParticula();
+    }
+});
+
+const styleSheet = document.createElement('style');
+styleSheet.innerHTML = `
+@keyframes parpadeo {
+    0% { opacity: 0; transform: scale(0); }
+    50% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0); }
+}
+.particula {
+    position: absolute;
+    border-radius: 50%;
+    z-index: 0;
+}
+`;
+document.head.appendChild(styleSheet);
+ Añadir script.js para la animación
